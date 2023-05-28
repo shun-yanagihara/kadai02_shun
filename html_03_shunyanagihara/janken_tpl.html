@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>じゃんけん</title>
+</head>
+<body>
+
+<header>
+  <h1>じゃんけん</h1>
+</header>
+
+<main>
+  <ul>
+    <li id="gu_btn" onclick="gu_func(this)">グー</li>
+    <li id="cho_btn" onclick="cho_func(this)">チョキ</li>
+    <li id="par_btn" onclick="par_func(this)">パー</li>
+  </ul>
+  <!-- <div>コンピュータの出した手は？「<span id="pc_hands">pc_hands</span>」</div>
+  <div> -->
+    <div>自分の出した手：
+    </div>
+    <div id="my_hands">xx</div>
+    <div>コンピュータの出した手：</div>
+    <div id="pc_hands">yy</div>
+    <div>勝敗：</div>
+    <div id="judgment">zz</div>
+  </div>
+</main>
+
+<footer>
+  <!-- 押したボタンを"my_hands"に格納 -->
+  <!-- ランダムで 1,2,3の数字を出力 -->
+  <!-- 1=グー、2=チョキ、3=パーを""pc_hands"に格納 -->
+  <!-- my_handsとpc_handsの関係で勝敗引き分けを出力 -->
+
+</footer>
+<script>
+//じゃんけん用のSCRIPTを書いてください
+// document.getElementById("gu_btn").onclick = function() {
+//   let my_hands = "gu";
+//   console.log(my_hands);
+//   let pc_hands = Math.ceil(Math.random() * 3) 
+//   console.log(pc_hands)  
+// };
+
+// 自分の手が「グー」
+var gu_func = function() {
+  var my_hands = "gu";
+  console.log("自分の手："+my_hands);
+  var pc_hands = Math.ceil(Math.random() * 3)
+  // 相手の手決め
+  if(pc_hands==1){
+    pc_hands="gu";
+  }else if(pc_hands==2){
+    pc_hands="cho";
+  }else{
+    pc_hands="par";
+  }
+  console.log("相手の手："+pc_hands)
+  // 勝敗
+  if(pc_hands=="gu"){
+    console.log("あいこ")
+    var judgment = "あいこ";
+  }else if(pc_hands=="cho"){
+    console.log("かち")
+    var judgment = "かち";
+  }else{
+    console.log("まけ")
+    var judgment = "まけ";
+  }
+  // HTMLからボタン情報を取得し、テキストに勝敗を上書きする
+  var div = document.getElementById("my_hands");
+  div.innerHTML=my_hands;
+  var div = document.getElementById("pc_hands");
+  div.innerHTML=pc_hands;
+  var div = document.getElementById("judgment")
+  div.innerHTML=judgment;
+}
+
+// 自分の手が「チョキ」
+var cho_func = function() {
+  let my_hands = "cho";
+  console.log("自分の手："+my_hands);
+  let pc_hands = Math.ceil(Math.random() * 3)
+  // 相手の手決め
+  if(pc_hands==1){
+    pc_hands="gu";
+  }else if(pc_hands==2){
+    pc_hands="cho";
+  }else{
+    pc_hands="par";
+  }
+  console.log("相手の手："+pc_hands)
+  // 勝敗
+  if(pc_hands=="gu"){
+    console.log("まけ");
+    var judgment = "まけ";
+  }else if(pc_hands=="cho"){
+    console.log("あいこ");
+    var judgment = "あいこ";
+  }else{
+    console.log("かち");
+    var judgment = "かち";
+  } 
+  // HTMLからボタン情報を取得し、テキストに勝敗を上書きする
+  var div = document.getElementById("my_hands");
+  div.innerHTML=my_hands;
+  var div = document.getElementById("pc_hands");
+  div.innerHTML=pc_hands;
+  var div = document.getElementById("judgment")
+  div.innerHTML=judgment;
+}
+// 自分の手が「パー」
+var par_func = function() {
+  let my_hands = "par";
+  console.log("自分の手："+my_hands);
+  let pc_hands = Math.ceil(Math.random() * 3)
+  // 相手の手決め
+  if(pc_hands==1){
+    pc_hands="gu";
+  }else if(pc_hands==2){
+    pc_hands="cho";
+  }else{
+    pc_hands="par";
+  }
+  console.log("相手の手："+pc_hands)
+  // 勝敗
+  if(pc_hands=="gu"){
+    console.log("かち");
+    var judgment = "かち";
+  }else if(pc_hands=="cho"){
+    console.log("まけ");
+    var judgment = "まけ";
+  }else{
+    console.log("あいこ");
+    var judgment = "あいこ";
+  }
+  // HTMLからボタン情報を取得し、テキストに勝敗を上書きする
+  var div = document.getElementById("my_hands");
+  div.innerHTML=my_hands;
+  var div = document.getElementById("pc_hands");
+  div.innerHTML=pc_hands;
+  var div = document.getElementById("judgment")
+  div.innerHTML=judgment;
+};
+
+
+
+
+</script>
+</body>
+</html>
